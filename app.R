@@ -37,7 +37,7 @@ ui <- fluidPage(
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
-  output$infoTable<-renderTable(table%>%subset(LastName==input$surname))
+  output$infoTable<-renderTable(table%>%subset(tolower(LastName)==tolower(input$surname)))
 
     # output$distPlot <- renderPlot({
     #     # generate bins based on input$bins from ui.R
